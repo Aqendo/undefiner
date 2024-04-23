@@ -15,7 +15,7 @@ To install these packages on Ubuntu/Debian (and derivatives):
 $ git clone --depth=1 https://github.com/Aqendo/undefiner
 $ python -m venv venv
 $ source venv/bin/activate
-$ pip install aiogram
+$ pip install -r requirements.txt
 $ cp .env{.example,}
 $ nano .env
 $ mkdir cpps
