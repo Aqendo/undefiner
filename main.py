@@ -43,9 +43,19 @@ async def undefiner_handler(message: Message) -> None:
         file = await bot.get_file(file_id)
         file_path = file.file_path
         if not isinstance(file_path, str):
+            try:
+                remove(download_path)
+                remove(result_path)
+            except:
+                pass
             return
         if not file_path.endswith(".cpp"):
             await message.reply("Расширенние не .cpp!")
+            try:
+                remove(download_path)
+                remove(result_path)
+            except:
+                pass
             return
         await bot.download_file(file_path, download_path)
     includes = []
